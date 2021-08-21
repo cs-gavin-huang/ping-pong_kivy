@@ -1,5 +1,5 @@
 from kivy.app import App
-from kivy.uix.widget import widget
+from kivy.uix.widget import Widget
 
 # class of pingpong game wdiget, root of tree
 class PingPongGame(Widget):
