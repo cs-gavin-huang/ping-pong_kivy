@@ -1,10 +1,21 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
 # adding import dependencies
-from kivy.properties import NumericProperty, ReferenceListProperty, ObjectProperty
+from kivy.properties import ( 
+    NumericProperty, ReferenceListProperty, ObjectProperty
+)
 from kivy.vector import Vector
 from kivy.clock import Clock
 from random import randint
+
+class PingPongPaddle(Widget):
+    score = NumericProperty(0)
+
+    def bounce_ball(self, ball):
+        if self.collide_widget(ball):
+            speedup = 1.1
+            offset = 0.02 * Vector(0, ball.center_y-self.center_y)
+            ball.velocity = speedup * (offset - ball.velocity)
 
 # class of pingpong game wdiget, root of tree
 class PingPongGame(Widget):
