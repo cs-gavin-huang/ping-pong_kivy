@@ -1,11 +1,14 @@
 #:kivy 2.0.0
-
+# what version you want to use 
 <PingPongGame>:
+# this name is the same as the class name  you have defined in main file
+    # below the canvas add a rectangle: define position and size
     canvas:
         Rectangle:
             pos: self.center_x - 5, 0
             size: 10, self.height
     
+    # two label define left and right size number
     Label:
         font_size: 70
         center_x: root.width / 4
